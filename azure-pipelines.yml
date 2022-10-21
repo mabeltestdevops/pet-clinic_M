@@ -12,7 +12,11 @@ steps:
     sonarQubeRunAnalysis: false
     spotBugsAnalysis: false
 
-
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonarcloud_mabel'
+    organization: 'mabeltestdevops'
+    scannerMode: 'Other'
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
