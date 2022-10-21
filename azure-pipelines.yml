@@ -16,3 +16,15 @@ steps:
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
     spotBugsAnalysis: false
+
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker'
+    repository: 'mabelmellado1974 / pet_clinic_container'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'
