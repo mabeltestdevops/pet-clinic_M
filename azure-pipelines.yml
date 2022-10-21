@@ -16,7 +16,8 @@ steps:
   inputs:
     SonarCloud: 'sonarcloud_mabel'
     organization: 'mabeltestdevops'
-    scannerMode: 'Other'
+    projectKey: 'mabeltestdevops_pet-clinic_M'
+    projectName: 'pet-clinic_M'
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
