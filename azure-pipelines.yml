@@ -31,6 +31,11 @@ steps:
     sqGradlePluginVersionChoice: 'specify'
     sonarQubeGradlePluginVersion: '3.3'
     spotBugsAnalysis: false
+- task: dependency-check-build-task@6
+  inputs:
+    projectName: 'pet-clinic_M'
+    scanPath: '$(Build.SourcesDirectory)/build/libs'
+    format: 'HTML'
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
