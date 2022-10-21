@@ -18,6 +18,19 @@ steps:
     organization: 'mabeltestdevops'
     projectKey: 'mabeltestdevops_pet-clinic_M'
     projectName: 'pet-clinic_M'
+    cliProjectKey: 
+
+- task: Gradle@3
+  inputs:
+    gradleWrapperFile: 'gradlew'
+    tasks: 'build'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: true
+    sqGradlePluginVersionChoice: 'specify'
+    sonarQubeGradlePluginVersion: '2.6.1'
+    spotBugsAnalysis: false
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
